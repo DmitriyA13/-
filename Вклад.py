@@ -1,24 +1,24 @@
 while True:
   try:
-    summ = float(input('Введите сумму:'))
+    summ = float(input('Enter the amount:'))
     break
   except ValueError:
-    print('Неверный ввод')  
+    print('Invalid input')  
 years = 1
 percent = 0
 def check():
   while True:
-    prog1 = input('Программа(просто цифра):')
-    prog2 = input('Подтвердите программу:')
+    prog1 = input('Program. Just a num:')
+    prog2 = input('Confirm the program:')
     if prog1 == prog2:
       return prog2
       break
     else:
-      print('Подтверждение не пройдено')  
+      print('Verification failed')  
 
 
 while True:
-  print("Выбирите программу\n1) 1 год, 7 % \n2) 3 года 8,5 % \n3) 5 лет 10 %")
+  print("Choose a program\n1) 1 year, 7 % \n2) 3 years 8,5 % \n3) 5 years 10 %")
   prog = check()
   if prog == '1':
     percent = 7
@@ -32,27 +32,27 @@ while True:
     years = 5
     break  
   else:
-    print('указанная программа не существует, или удалена')    
+    print('specified program does not exist or has been deleted')    
 summ = round((summ + round(((summ * percent)/100),2))*years,2)
-print('СУММА НА КОНЕЦ ПРОГРАММЫЖ',summ)
-print('Заберёт ли клиент деньги после окончания программы')
+print('AMOUNT AT THE END OF THE PROGRAM:',summ)
+print('Will the client take the money after the end of the program')
 while True:
-  answer = input('да/нет:')
-  if answer == 'да' or answer == 'Да' or answer == 'ДА':
+  answer = input('Yes/No:')
+  if answer == 'yes' or answer == 'Yes' or answer == 'YES':
     break
-  elif answer == 'нет' or answer == 'Нет' or answer == 'НЕТ' :
+  elif answer == 'no' or answer == 'No' or answer == 'NO' :
     try:
-      plusyears = int(input('на какой срок денежные средства останутся?'))
+      plusyears = int(input('For how long the money will remain?'))
     except ValueError:
-      print('Неверный тип данных')
+      print('Invalid data type')
     for i in range(plusyears):
-      print('год после окончания',i+1)
+      print('year after graduation',i+1)
       percent = round(percent/2,2)
       if percent < 0.1:
         percent = 0.1
-      print('процент',percent)
+      print('percent',percent)
       summ = round((summ + round(((summ * percent)/100),2))*years,2)
-      print('Сумма',summ)
+      print('Amount',summ)
     break  
   else:
-    print('неизвестный ответ')    
+    print('unknown answer')    
